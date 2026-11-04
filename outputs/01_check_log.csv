@@ -1,0 +1,83 @@
+section,check,status,detail
+download,"DEMO_J: file exists, is non-empty and has a valid XPORT header",PASS,"3,412,720 bytes (reused)"
+download,"BMX_J: file exists, is non-empty and has a valid XPORT header",PASS,"1,466,000 bytes (reused)"
+download,"GHB_J: file exists, is non-empty and has a valid XPORT header",PASS,"103,520 bytes (reused)"
+download,"DIQ_J: file exists, is non-empty and has a valid XPORT header",PASS,"3,851,840 bytes (reused)"
+structure,DEMO_J: all 10 expected variables are present,PASS,
+structure,DEMO_J: expected variables are numeric,PASS,
+structure,DEMO_J: SEQN has no missing values,PASS,
+structure,DEMO_J: SEQN values are whole numbers,PASS,
+structure,DEMO_J: SEQN is unique,PASS,
+structure,"DEMO_J: row count equals the CDC codebook (9,254)",PASS,"observed 9,254"
+structure,BMX_J: all 6 expected variables are present,PASS,
+structure,BMX_J: expected variables are numeric,PASS,
+structure,BMX_J: SEQN has no missing values,PASS,
+structure,BMX_J: SEQN values are whole numbers,PASS,
+structure,BMX_J: SEQN is unique,PASS,
+structure,"BMX_J: row count equals the CDC codebook (8,704)",PASS,"observed 8,704"
+structure,GHB_J: all 2 expected variables are present,PASS,
+structure,GHB_J: expected variables are numeric,PASS,
+structure,GHB_J: SEQN has no missing values,PASS,
+structure,GHB_J: SEQN values are whole numbers,PASS,
+structure,GHB_J: SEQN is unique,PASS,
+structure,"GHB_J: row count equals the CDC codebook (6,401)",PASS,"observed 6,401"
+structure,DIQ_J: all 2 expected variables are present,PASS,
+structure,DIQ_J: expected variables are numeric,PASS,
+structure,DIQ_J: SEQN has no missing values,PASS,
+structure,DIQ_J: SEQN values are whole numbers,PASS,
+structure,DIQ_J: SEQN is unique,PASS,
+structure,"DIQ_J: row count equals the CDC codebook (8,897)",PASS,"observed 8,897"
+codes,DEMO_J.SDDSRVYR: no undocumented codes,PASS,
+codes,DEMO_J.SDDSRVYR: code frequencies match the CDC codebook,PASS,
+codes,DEMO_J.RIDSTATR: no undocumented codes,PASS,
+codes,DEMO_J.RIDSTATR: code frequencies match the CDC codebook,PASS,
+codes,DEMO_J.RIAGENDR: no undocumented codes,PASS,
+codes,DEMO_J.RIAGENDR: code frequencies match the CDC codebook,PASS,
+codes,DEMO_J.RIDRETH3: no undocumented codes,PASS,
+codes,DEMO_J.RIDRETH3: code frequencies match the CDC codebook,PASS,
+codes,DEMO_J.RIDEXPRG: no undocumented codes,PASS,
+codes,DEMO_J.RIDEXPRG: code frequencies match the CDC codebook,PASS,
+codes,DEMO_J.WTMEC2YR: code frequencies match the CDC codebook,PASS,
+ranges,DEMO_J.RIDAGEYR: values inside the documented range,PASS,observed 0 to 80; documented 0 to 80
+ranges,DEMO_J.SDMVPSU: values inside the documented range,PASS,observed 1 to 2; documented 1 to 2
+ranges,DEMO_J.SDMVSTRA: values inside the documented range,PASS,observed 134 to 148; documented 134 to 148
+ranges,DEMO_J.WTMEC2YR: positive values inside the documented range,PASS,observed 2566.18 to 419763; documented 2566.18 to 419763
+codes,BMX_J.BMDSTATS: no undocumented codes,PASS,
+codes,BMX_J.BMDSTATS: code frequencies match the CDC codebook,PASS,
+codes,BMX_J.BMIWT: no undocumented codes,PASS,
+codes,BMX_J.BMIWT: code frequencies match the CDC codebook,PASS,
+codes,BMX_J.BMXBMI: code frequencies match the CDC codebook,PASS,
+ranges,BMX_J.BMXBMI: values inside the documented range,PASS,observed 12.3 to 86.2; documented 12.3 to 86.2
+ranges,BMX_J.BMXWT: values inside the documented range,PASS,observed 3.2 to 242.6; documented 3.2 to 242.6
+ranges,BMX_J.BMXHT: values inside the documented range,PASS,observed 78.3 to 197.7; documented 78.3 to 197.7
+codes,GHB_J.LBXGH: code frequencies match the CDC codebook,PASS,
+ranges,GHB_J.LBXGH: values inside the documented range,PASS,observed 3.8 to 16.2; documented 3.8 to 16.2
+codes,DIQ_J.DIQ010: no undocumented codes,PASS,
+codes,DIQ_J.DIQ010: code frequencies match the CDC codebook,PASS,
+design,DEMO_J: 15 strata and 30 PSUs (strata x PSU combinations),PASS,observed 15 strata and 30 PSUs
+merge,BMX_J: every SEQN also exists in DEMO_J (no rows would be lost),PASS,
+merge,"After joining BMX_J: row count unchanged (9,254)",PASS,"observed 9,254"
+merge,GHB_J: every SEQN also exists in DEMO_J (no rows would be lost),PASS,
+merge,"After joining GHB_J: row count unchanged (9,254)",PASS,"observed 9,254"
+merge,DIQ_J: every SEQN also exists in DEMO_J (no rows would be lost),PASS,
+merge,"After joining DIQ_J: row count unchanged (9,254)",PASS,"observed 9,254"
+merge,"Final merged table keeps all 9,254 DEMO_J participants",PASS,
+merge,SEQN is unique in the merged table,PASS,
+merge,No duplicated column names after merging,PASS,
+merge,Participants without a BMX_J row are all non-examined (RIDSTATR = 1),PASS,0 examined participant(s) without body measures
+merge,Participants without a DIQ_J row are all under 1 year old (RIDAGEYR = 0),PASS,0 participant(s) aged 1+ without a DIQ_J row
+recode,"DIQ010 now contains only the codes 1, 2, 3 or missing",PASS,
+pregnancy,RIDEXPRG is non-missing only for women aged 20-44,PASS,
+pregnancy,Every examined woman aged 20-44 has a RIDEXPRG value,PASS,
+flags,Examination weight is positive exactly when RIDSTATR = 2,PASS,
+flags,BMI is present only for examined participants,PASS,
+flags,HbA1c is present only for examined participants,PASS,
+flags,Primary sample is a subset of the eligible adults,PASS,
+flags,Sensitivity sample is a subset of the primary sample,PASS,
+flags,Every participant in the primary sample has a positive weight and design variables,PASS,
+sample_flow,Counts never increase from one step to the next,PASS,
+sample_flow,Step 3 equals the eligible-adults flag,PASS,
+sample_flow,Final step equals the primary-sample flag,PASS,
+sample_flow,Step 1 equals the number of examined participants,PASS,
+save,Re-loaded processed file has the same shape,PASS,"9,254 rows x 32 columns"
+save,Re-loaded flag totals are identical,PASS,

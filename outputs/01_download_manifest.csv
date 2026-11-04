@@ -1,0 +1,5 @@
+file,url_used,http_status,content_type,size_bytes,sha256,retrieved_utc,status
+DEMO_J,(existing local file reused),,,3412720,c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec,2026-11-04 10:32:21,reused
+BMX_J,(existing local file reused),,,1466000,8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a,2026-11-04 10:32:21,reused
+GHB_J,(existing local file reused),,,103520,35f07094573a0061a03ed609a5a363b34eb1b1c7065d1623b43d72e132a8a654,2026-11-04 10:32:21,reused
+DIQ_J,(existing local file reused),,,3851840,1ecbf5360dfc331d1efbf32198553dc30e9a1f4cff0a907ed30ca72bac797f89,2026-11-04 10:32:21,reused

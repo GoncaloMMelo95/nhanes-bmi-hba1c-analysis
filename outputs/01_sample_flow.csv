@@ -1,0 +1,8 @@
+step,criterion,n_remaining,n_excluded_at_step,pct_of_all_participants
+0,All participants in DEMO_J,9254,0,100.0
+1,Examined in the MEC (RIDSTATR = 2),8704,550,94.1
+2,Aged 20 years or older (RIDAGEYR >= 20),5265,3439,56.9
+3,Not a confirmed pregnancy (RIDEXPRG != 1; blanks are kept),5210,55,56.3
+4,Non-missing BMI (BMXBMI),5120,90,55.3
+5,Non-missing HbA1c (LBXGH),4893,227,52.9
+6,"Non-missing age, sex and race/ethnicity",4893,0,52.9
