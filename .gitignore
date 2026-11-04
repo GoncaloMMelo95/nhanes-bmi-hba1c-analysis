@@ -1,0 +1,19 @@
+
+# Raw and processed data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Statistical data files
+*.xpt
+*.XPT
+*.parquet
+*.rds
+
+# Python temporary files
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.venv/
+.env
